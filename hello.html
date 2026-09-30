@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello World</title>
+    <style>
+      :root {
+        --bg: #f4f7fb;
+        --card: #ffffff;
+        --primary: #2563eb;
+        --primary-dark: #1d4ed8;
+        --text: #1f2937;
+        --muted: #6b7280;
+        --border: #e5e7eb;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: linear-gradient(135deg, #eef4ff 0%, #f9fafb 100%);
+        color: var(--text);
+      }
+
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 24px;
+      }
+
+      .navbar {
+        background: rgba(255, 255, 255, 0.9);
+        border-bottom: 1px solid var(--border);
+        position: sticky;
+        top: 0;
+        backdrop-filter: blur(10px);
+      }
+
+      .nav-inner {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 18px 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .brand {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: var(--primary);
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 20px;
+      }
+
+      .nav-links a {
+        color: var(--text);
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr;
+        gap: 32px;
+        align-items: center;
+        padding: 64px 0 40px;
+      }
+
+      .eyebrow {
+        display: inline-block;
+        font-size: 0.78rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        background: #dbeafe;
+        color: var(--primary-dark);
+        padding: 8px 12px;
+        border-radius: 999px;
+      }
+
+      h1 {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        line-height: 1.1;
+        margin: 18px 0 16px;
+      }
+
+      .hero p {
+        color: var(--muted);
+        font-size: 1.08rem;
+        line-height: 1.7;
+        margin-bottom: 26px;
+      }
+
+      .actions {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 14px 22px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 700;
+        transition: 0.2s ease;
+      }
+
+      .btn-primary {
+        background: var(--primary);
+        color: white;
+      }
+
+      .btn-primary:hover {
+        background: var(--primary-dark);
+      }
+
+      .btn-secondary {
+        background: white;
+        color: var(--text);
+        border: 1px solid var(--border);
+      }
+
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 24px;
+        box-shadow: 0 20px 45px rgba(37, 99, 235, 0.08);
+        padding: 24px;
+      }
+
+      .mini-box {
+        background: linear-gradient(135deg, #dbeafe, #eff6ff);
+        border-radius: 18px;
+        padding: 18px;
+        margin-bottom: 18px;
+      }
+
+      .stat {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 14px 0;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .stat:last-child {
+        border-bottom: none;
+      }
+
+      .features {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+        padding: 20px 0 60px;
+      }
+
+      .feature {
+        background: rgba(255, 255, 255, 0.7);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        padding: 22px;
+      }
+
+      .feature h3 {
+        margin-top: 0;
+        margin-bottom: 10px;
+      }
+
+      .feature p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      @media (max-width: 760px) {
+        .hero,
+        .features {
+          grid-template-columns: 1fr;
+        }
+
+        .nav-inner {
+          flex-direction: column;
+          gap: 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="nav-inner">
+        <div class="brand">HelloWorld</div>
+        <nav class="nav-links" aria-label="Navigasi utama">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero" id="home">
+        <div>
+          <span class="eyebrow">Selamat datang</span>
+          <h1>Halo, dunia!</h1>
+          <p>
+            Ini adalah halaman sederhana yang dibuat untuk menampilkan desain
+            minimal dan modern dengan tampilan yang bersih dan mudah dibaca.
+          </p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#about">Mulai</a>
+            <a class="btn btn-secondary" href="#services">Lihat fitur</a>
+          </div>
+        </div>
+
+        <div class="card" aria-label="Ringkasan profil">
+          <div class="mini-box">
+            <strong>Proyek</strong>
+            <div style="font-size: 2rem; font-weight: 700; margin-top: 8px;">01</div>
+          </div>
+
+          <div class="stat">
+            <span>Kecepatan</span>
+            <strong>Fast</strong>
+          </div>
+          <div class="stat">
+            <span>Desain</span>
+            <strong>Modern</strong>
+          </div>
+          <div class="stat">
+            <span>Responsif</span>
+            <strong>Yes</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="features" id="services">
+        <article class="feature">
+          <h3>Fitur 1</h3>
+          <p>Struktur halaman yang rapi dan mudah dikembangkan untuk proyek kecil maupun besar.</p>
+        </article>
+
+        <article class="feature" id="about">
+          <h3>Fitur 2</h3>
+          <p>Styling yang ringan namun tetap terlihat profesional dan nyaman dibaca.</p>
+        </article>
+
+        <article class="feature" id="contact">
+          <h3>Fitur 3</h3>
+          <p>Layout yang dapat menyesuaikan ukuran layar agar tetap optimal di desktop dan mobile.</p>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
